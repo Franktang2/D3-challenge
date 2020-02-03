@@ -23,7 +23,7 @@ var svg = d3
 var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-// Step 3: Import teh data
+// Step 3: Import the data
 
   d3.csv("assets/data/data.csv").then(function(stateData) {
 
@@ -51,19 +51,11 @@ var chartGroup = svg.append("g")
         .domain([0, d3.max(stateData, d => d.obesity)])
         .range([height, 0]);
     
-    /*var yLinearScale2 = d3.scaleLinear()
-        .domain([0, d3.max(stateData, d => d.smokes)])
-        .range([height, 0]);
-
-    var yLinearScale3 = d3.scaleLinear()
-        .domain([0, d3.max(stateData, d => d.healthcare)])
-        .range([height, 0]);*/
 
 // Step 6: Create Axes
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis1 = d3.axisLeft(yLinearScale1);
-    //var leftAxis2 = d3.axisRight(yLinearScale2);
-   // var leftAxis3 = d3.axisLeft(yLinearScale3);
+
     
 
 // Step 7: Append the axes to the chartGroup 
@@ -86,8 +78,7 @@ var chartGroup = svg.append("g")
     .attr("cy", d => yLinearScale1(d.obesity))
     .attr("r", "10")
     .attr("fill", "orange");
-    //.attr("opacity", ".5")
-    //.attr("stroke", "black");
+ 
 
   
   // Step 9: Adding state abbreviation to circles
@@ -111,7 +102,6 @@ var chartGroup = svg.append("g")
     .attr("transform", "rotate(-90)")
     .attr("y", 0 - 40)
     .attr("x", 0 -250)
-    //.attr("dy", "1em")
     .attr("class", "axisText")
     .text("Obesity (%)");
 
