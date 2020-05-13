@@ -2,7 +2,7 @@
 
 ## Background
 
-Create a scatter plot to show the relation between poverty and obesity in all the states in the USA.
+Created a scatter plot to show the relationship between poverty and obesity in all the states in the USA.
 
 ## Technologies Used
 
